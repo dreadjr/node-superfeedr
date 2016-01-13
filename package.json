@@ -17,9 +17,10 @@
   },
   "homepage": "https://github.com/dreadjr/node-superfeedr#readme",
   "dependencies": {
-    "superagent": "^1.6.1"
     "assert-plus": "^0.2.0",
-    "lodash": "^3.10.1",
-    "string": "^3.3.1"
+    "lodash": "^4.0.0",
+    "string": "^3.3.1",
+    "superagent": "^1.6.1",
+    "superagent-defaults": "^0.1.14"
   }
 }

@@ -168,11 +168,16 @@ describe('subscribers', function () {
             "hub.callback": "https://callback.com/1",
             "hub.verify": null
           })
-          .reply(422);
+          .reply(422, "Failure.");
 
-        return client.removeFeed(params.topic, params.callback, params.options)
-          .should.be.rejectedWith(Error);
-//          .and.should.eventually.have.status(422);
+        var request = client.removeFeed(params.topic, params.callback, params.options)
+          .should.eventually.be.rejected;
+
+        return Promise.all([
+          request.should.eventually.have.property('status', 422),
+          request.should.eventually.have.property('meta').that.eql({ endpoint: 'https://push.superfeedr.com', method: 'POST'}),
+          request.should.eventually.have.deep.property('response.error.text', 'Failure.')
+        ]);
       });
     });
 

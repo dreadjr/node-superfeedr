@@ -1,5 +1,7 @@
 ## Modules
 
+[![Join the chat at https://gitter.im/dreadjr/node-superfeedr](https://badges.gitter.im/dreadjr/node-superfeedr.svg)](https://gitter.im/dreadjr/node-superfeedr?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 <dl>
 <dt><a href="#module_superfeedr">superfeedr</a></dt>
 <dd><p>node-superfeedr</p>

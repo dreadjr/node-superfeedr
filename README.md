@@ -1,7 +1,8 @@
 [![Dependency status](https://img.shields.io/david/dreadjr/node-superfeedr.svg?style=flat)](https://david-dm.org/dreadjr/node-superfeedr)
 [![devDependency Status](https://img.shields.io/david/dev/dreadjr/node-superfeedr.svg?style=flat)](https://david-dm.org/dreadjr/node-superfeedr#info=devDependencies)
 [![Build Status](https://img.shields.io/travis/dreadjr/node-superfeedr.svg?style=flat&branch=master)](https://travis-ci.org/dreadjr/node-superfeedr)
-[![Test Coverage](https://img.shields.io/coveralls/dreadjr/node-superfeedr.svg?style=flat&branch=master)](https://coveralls.io/r/dreadjr/node-superfeedr)
+[![Coverage Status](https://coveralls.io/repos/dreadjr/node-superfeedr/badge.svg?branch=master&service=github)](https://coveralls.io/github/dreadjr/node-superfeedr?branch=master)
+
 [![NPM](https://nodei.co/npm/node-superfeedr.svg?style=flat)](https://npmjs.org/package/node-superfeedr)
 
 ## Installation

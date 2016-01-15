@@ -10,6 +10,7 @@
 <br/>
 [![NPM](https://nodei.co/npm/node-superfeedr.svg?style=flat)](https://npmjs.org/package/node-superfeedr)
 [![npm](https://img.shields.io/npm/v/node-superfeedr.svg?style=flat-square)]()
+[![Gitter](https://img.shields.io/gitter/room/dreadjr/node-superfeedr.js.svg?style=flat-square)](https://gitter.im/dreadjr/node-superfeedr)
 
 ## Installation
 

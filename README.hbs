@@ -1,9 +1,15 @@
-[![Dependency status](https://img.shields.io/david/dreadjr/node-superfeedr.svg?style=flat)](https://david-dm.org/dreadjr/node-superfeedr)
-[![devDependency Status](https://img.shields.io/david/dev/dreadjr/node-superfeedr.svg?style=flat)](https://david-dm.org/dreadjr/node-superfeedr#info=devDependencies)
-[![Build Status](https://img.shields.io/travis/dreadjr/node-superfeedr.svg?style=flat&branch=master)](https://travis-ci.org/dreadjr/node-superfeedr)
-[![Coverage Status](https://coveralls.io/repos/dreadjr/node-superfeedr/badge.svg?branch=master&service=github)](https://coveralls.io/github/dreadjr/node-superfeedr?branch=master)
+[![Build Status](https://img.shields.io/travis/dreadjr/node-superfeedr.svg?style=flat-square&branch=master)](https://travis-ci.org/dreadjr/node-superfeedr)
+[![Coverage Status](https://img.shields.io/coveralls/dreadjr/node-superfeedr.svg?style=flat&branch=master&service=github)](https://coveralls.io/github/dreadjr/node-superfeedr?branch=master)
 
+[![Dependency status](https://img.shields.io/david/dreadjr/node-superfeedr.svg?style=flat-square)](https://david-dm.org/dreadjr/node-superfeedr)
+[![devDependency Status](https://img.shields.io/david/dev/dreadjr/node-superfeedr.svg?style=flat-square)](https://david-dm.org/dreadjr/node-superfeedr#info=devDependencies)
+<br/>
+[![optionalDependency](https://img.shields.io/david/optional/elnounch/byebye.svg?style=flat-square)]()
+[![peerDependency](https://img.shields.io/david/peer/webcomponents/generator-element.svg?style=flat-square)]()
+
+<br/>
 [![NPM](https://nodei.co/npm/node-superfeedr.svg?style=flat)](https://npmjs.org/package/node-superfeedr)
+[![npm](https://img.shields.io/npm/v/node-superfeedr.svg?style=flat-square)]()
 
 ## Installation
 

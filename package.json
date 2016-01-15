@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha tests/",
-    "jsdocs": "jsdoc2md --src \"*.js\" --src \"./lib/**/*.js\" --conf conf.json --verbose > README.md",
+    "jsdocs": "jsdoc2md --src \"*.js\" --src \"./lib/**/*.js\" --conf conf.json --template README.hbs --verbose > README.md",
 
     "jsdox": "./node_modules/jsdox/bin/jsdox --config conf.json --recursive --output docs ."
   },

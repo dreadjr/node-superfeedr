@@ -1,29 +1,54 @@
-## Modules
+[![Dependency status](https://img.shields.io/david/dreadjr/node-superfeedr.svg?style=flat)](https://david-dm.org/dreadjr/node-superfeedr)
+[![devDependency Status](https://img.shields.io/david/dev/dreadjr/node-superfeedr.svg?style=flat)](https://david-dm.org/dreadjr/node-superfeedr#info=devDependencies)
+[![Build Status](https://img.shields.io/travis/dreadjr/node-superfeedr.svg?style=flat&branch=master)](https://travis-ci.org/dreadjr/node-superfeedr)
+[![Test Coverage](https://img.shields.io/coveralls/dreadjr/node-superfeedr.svg?style=flat&branch=master)](https://coveralls.io/r/dreadjr/node-superfeedr)
+[![NPM](https://nodei.co/npm/node-superfeedr.svg?style=flat)](https://npmjs.org/package/node-superfeedr)
 
-<dl>
-<dt><a href="#module_superfeedr">superfeedr</a></dt>
-<dd><p>node-superfeedr</p>
-<p>Install:</p>
-<pre><code class="lang-bash">npm install node-superfeedr
-</code></pre>
-<p>Example:</p>
-<pre><code class="lang-javascript">var superfeedr = require(&#39;node-superfeedr&#39;);
-</code></pre>
-</dd>
-<dt><a href="#module_superfeedr/subscribers/http">superfeedr/subscribers/http</a></dt>
-<dd><p>Superfeedr Subscribers Http Client</p>
-<p>Example:</p>
-<pre><code class="lang-javascript">var superfeedr = require(&#39;node-superfeedr&#39;);
-var options = {
-  username: process.env.SUPERFEEDR_USERNAME || &#39;username&#39;,
-  token: process.env.SUPERFEEDR_TOKEN || &#39;token&#39;
-};
+## Installation
 
-var client = new superfeedr.Subscribers.HttpClient(options);
-</code></pre>
-</dd>
-</dl>
+  npm install node-superfeedr
 
+## Testing
+
+  npm test
+
+## API Reference
+node-superfeedr
+
+Install:
+
+```bash
+npm install node-superfeedr
+```
+
+Example:
+
+```javascript
+var superfeedr = require('node-superfeedr');
+```
+
+
+
+## Testing out this
+<a name="module_superfeedr"></a>
+## superfeedr
+node-superfeedr
+
+Install:
+
+```bash
+npm install node-superfeedr
+```
+
+Example:
+
+```javascript
+var superfeedr = require('node-superfeedr');
+```
+
+
+
+## Helper
 <a name="module_superfeedr"></a>
 ## superfeedr
 node-superfeedr

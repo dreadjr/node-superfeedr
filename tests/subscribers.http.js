@@ -13,11 +13,13 @@ chai.use(chaiAsPromised);
 
 chai.config.includeStack = true; // turn on stack trace
 
+var superfeedr = require('./../');
+
 describe('subscribers', function () {
   describe('http', function () {
 
-    describe('client', function() {
-      it('should get username and token from environmental variables', function() {
+    describe('client', function () {
+      it('should get username and token from environmental variables', function () {
         process.env.SUPERFEEDR_USERNAME = "username";
         process.env.SUPERFEEDR_TOKEN = "token";
 
@@ -30,7 +32,7 @@ describe('subscribers', function () {
         req.request()._headers.authorization.should.equal(expectedAuthHeader);
       });
 
-      it('should call on.error', function() {
+      it('should call on.error', function () {
         var test = new superfeedr.Subscribers.HttpClient();
         var spy = sinon.spy();
         test.request.on('error', spy);
@@ -44,28 +46,29 @@ describe('subscribers', function () {
       token: 'token'
     };
 
-    var superfeedr = require('./../');
     var client = new superfeedr.Subscribers.HttpClient(options);
 
-    describe('get', function() {
-      before(function() {
+    describe('get', function () {
+      before(function () {
         nock.disableNetConnect();
       });
 
-      after(function() {
+      after(function () {
         nock.enableNetConnect();
       });
 
-      it('should GET from endpoint', function() {
+      it('should GET from endpoint', function () {
         var scope = nock('https://push.superfeedr.com')
           .get('/test?q=test')
           .reply(200);
 
-        return client.get('/test', { q: 'test' })
+        return client.get('/test', {
+            q: 'test'
+          })
           .should.eventually.have.status(200);
       });
 
-      it('should GET from endpoint on error', function() {
+      it('should GET from endpoint on error', function () {
         var scope = nock('https://push.superfeedr.com')
           .get('/test')
           .reply(422, "Generic Error");
@@ -75,66 +78,79 @@ describe('subscribers', function () {
 
         return Promise.all([
           request.should.eventually.have.property('status', 422),
-          request.should.eventually.have.property('meta').that.eql({ endpoint: 'https://push.superfeedr.com', query: {}, uri: '/test', method: 'GET'}),
+          request.should.eventually.have.property('meta').that.eql({
+            endpoint: 'https://push.superfeedr.com',
+            query: {},
+            uri: '/test',
+            method: 'GET'
+          }),
           request.should.eventually.have.deep.property('response.error.text', "Generic Error")
         ]);
       });
     });
 
-    describe('post', function() {
-      before(function() {
+    describe('post', function () {
+      before(function () {
         nock.disableNetConnect();
       });
 
-      after(function() {
+      after(function () {
         nock.enableNetConnect();
       });
 
-      it('should POST from endpoint', function() {
+      it('should POST from endpoint', function () {
         var scope = nock('https://push.superfeedr.com')
-          .post('/', { q: 'test' })
+          .post('/', {
+            q: 'test'
+          })
           .reply(200);
 
-        return client.post({ q: 'test' })
+        return client.post({
+            q: 'test'
+          })
           .should.eventually.have.status(200);
       });
     });
 
-    describe('checkParameter', function() {
-      it('should return false when field not checked', function() {
+    describe('checkParameter', function () {
+      it('should return false when field not checked', function () {
         client.checkParameter('nothing', 'value').should.be.false;
       });
 
-      it('should return false when field checked but not in accepted values', function() {
+      it('should return false when field checked but not in accepted values', function () {
         client.checkParameter('verify', 'value').should.be.false;
       });
 
-      it('should return false when field checked and pass null', function() {
+      it('should return false when field checked and pass null', function () {
         client.checkParameter('verify', null).should.be.false;
       });
 
-      it('should return true when field checked and in accepted values', function() {
+      it('should return true when field checked and in accepted values', function () {
         client.checkParameter('verify', 'async').should.be.true;
       });
     });
 
-    describe('end', function() {
-      it('should append meta and call callback', function(done) {
+    describe('end', function () {
+      it('should append meta and call callback', function (done) {
         function callback(err, res) {
-          err.meta.should.eql({ meta: true });
+          err.meta.should.eql({
+            meta: true
+          });
           return done();
         }
 
-        client.end({ meta: true }, callback)(new Error("Bad error"));
+        client.end({
+          meta: true
+        }, callback)(new Error("Bad error"));
       });
     });
 
     describe('addFeed', function () {
-      before(function() {
+      before(function () {
         nock.disableNetConnect();
       });
 
-      after(function() {
+      after(function () {
         nock.enableNetConnect();
       });
 
@@ -197,7 +213,10 @@ describe('subscribers', function () {
 
         return Promise.all([
           request.should.eventually.have.property('status', 422),
-          request.should.eventually.have.property('meta').that.eql({ endpoint: 'https://push.superfeedr.com', method: 'POST'}),
+          request.should.eventually.have.property('meta').that.eql({
+            endpoint: 'https://push.superfeedr.com',
+            method: 'POST'
+          }),
           request.should.eventually.have.deep.property('response.error.text', "Please provide a valid hub.topic (feed) URL that is accepted on this hub. You did not provide a valid hub.topic.")
         ]);
       });
@@ -217,16 +236,16 @@ describe('subscribers', function () {
 
         return client.addFeed(params.topic, params.callback, params.secret, params.options)
           .should.eventually.be.rejected;
-//          .should.eventually.be.rejectedWith(AssertionError);
+        //          .should.eventually.be.rejectedWith(AssertionError);
       });
     });
 
     describe('removeFeed', function () {
-      before(function() {
+      before(function () {
         nock.disableNetConnect();
       });
 
-      after(function() {
+      after(function () {
         nock.enableNetConnect();
       });
 
@@ -300,7 +319,10 @@ describe('subscribers', function () {
 
         return Promise.all([
           request.should.eventually.have.property('status', 422),
-          request.should.eventually.have.property('meta').that.eql({ endpoint: 'https://push.superfeedr.com', method: 'POST'}),
+          request.should.eventually.have.property('meta').that.eql({
+            endpoint: 'https://push.superfeedr.com',
+            method: 'POST'
+          }),
           request.should.eventually.have.deep.property('response.error.text', 'Failure.')
         ]);
       });

@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha tests/"
+    "test": "./node_modules/.bin/mocha tests/",
+    "jsdocs": "jsdoc2md --src \"*.js\" --src \"./lib/**/*.js\" --conf conf.json --verbose > README.md",
+
+    "jsdox": "./node_modules/jsdox/bin/jsdox --config conf.json --recursive --output docs ."
   },
   "repository": {
     "type": "git",
@@ -28,6 +31,7 @@
     "chai": "^3.4.1",
     "chai-as-promised": "^5.2.0",
     "chai-http": "^1.0.0",
+    "jsdoc-to-markdown": "^1.3.3",
     "mocha": "^2.3.4",
     "nock": "^5.2.1"
   }
